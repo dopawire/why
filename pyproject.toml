@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "why-blame"
+version = "0.1.0"
+description = "git blame for reasons: explain why code is the way it is, with citations"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+claude = ["anthropic>=1.15"]
+
+[project.scripts]
+why = "whyblame.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["whyblame"]
